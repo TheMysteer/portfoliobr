@@ -1,0 +1,860 @@
+:root {
+    --primary-color: #4785FF;
+    --text-color: #333;
+    --bg-color: #fff;
+    --header-bg: #ffffff;
+    --card-bg: #f8f9fa;
+}
+
+[data-theme="dark"] {
+    --text-color: #fff;
+    --bg-color: #1a1a1a;
+    --header-bg: #252525;
+    --card-bg: #2d2d2d;
+
+    /* Links do header */
+    nav a {
+        color: #ffffff;
+    }
+
+    .hero {
+        background-image: linear-gradient(to right top, #000000, #141414, #212121, #2f2f2f, #3d3d3d);
+    }
+
+    /* Título principal da home */
+    .hero h1 {
+        color: #ffffff;
+    }
+
+    /* Descrição na home */
+    .hero p {
+        color: #ffffff;
+    }
+
+    /* Mantendo o título azul como está */
+    .title-blue {
+        color: #3B82F6;
+    }
+
+    /* ... outros estilos dark existentes ... */
+
+    /* Títulos das informações de contato */
+    .info-item h3 {
+        color: #ffffff;
+    }
+
+    /* Email e endereço */
+    .info-item a,
+    .info-item p {
+        color: #3B82F6; /* Mantendo azul para links */
+    }
+
+    /* Texto do email na seção de formulário */
+    .email-link {
+        color: #ffffff;
+    }
+
+    /* Labels do formulário se necessário */
+    .form-group label {
+        color: #ffffff;
+    }
+
+    /* Títulos principais que estavam pretos */
+    .section-title {
+        color: #ffffff;
+    }
+
+    /* Subtítulos que estavam pretos */
+    .section-subtitle {
+        color: #ffffff;
+    }
+
+    /* Textos normais que estavam pretos */
+    p, .tech-item span, .skill-item span {
+        color: #ffffff;
+    }
+
+    /* Mantendo os subtítulos azuis como estão */
+    .projects-section .section-subtitle,
+    .contact-section .section-subtitle {
+        color: #3B82F6; /* Mantém azul */
+    }
+
+    /* Ajuste nos cards se necessário */
+    .tech-item,
+    .skill-item {
+        background: #2d2d2d;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--header-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI';
+    font-weight: 500;
+}
+
+nav a.active {
+    background-color: #3B82F6;
+    color: white;
+    padding: 0.6rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.95rem;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.theme-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover .theme-icon {
+    transform: rotate(45deg);
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    gap: 2rem;
+    
+    /*background-image: url(imagens/background/Design\ sem\ nome\ \(1\).png);*/
+    background-image: linear-gradient(to right top, #ffffff, #e4e8fb, #bcd4f8, #84c3f2, #14b4e7);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 0.1rem;
+    color: #000000;
+    font-family: 'Segoe UI';
+    line-height: 1;
+}
+
+.changing-text,
+.text-wrapper,
+.typed-text,
+.typed-cursor,
+.typed,
+.typed-strings,
+#typed,
+.typed-cursor,
+.hero h2 {
+    font-size: 4rem !important;
+    font-weight: 600;
+    color: #4785FF;
+    margin-bottom: 1rem;
+    display: inline-block;
+    line-height: 1.2;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: #4785FF;
+    margin-bottom: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    color: #000000;
+    font-family: 'Segoe UI';
+}
+
+.social-links {
+    margin: 1.5rem 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.resume-btn {
+    display: inline-block;
+    background-color: #3B82F6;
+    color: white;
+    padding: 1.2rem 7rem; /* Reduzido de 8rem para 6rem */
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem; /* Reduzido de 1.2rem para 1.1rem */
+    text-align: center;
+    max-width: 300px; /* Reduzido de 400px para 300px */
+    transition: background-color 0.3s ease;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.resume-btn:hover {
+    background-color: #2563EB;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.tech-item.animate {
+    animation: techAnimation 1s cubic-bezier(0.43, 0.13, 0.23, 0.96) forwards;
+}
+
+.tech-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.tech-item span {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 400;
+}
+
+@keyframes techAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+.about-section {
+    padding: 2rem 10%;
+}
+
+.section-title {
+    font-family: "Segoe UI Bold", "Segoe UI", sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #000000;
+}
+
+.subtitle {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+}
+
+.about-text, .tech-description {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    max-width: 900px;
+    margin-bottom: 2rem;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 400;
+}
+
+[data-theme="dark"] .about-text,
+[data-theme="dark"] .tech-description {
+    color: #aaa;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.services-section {
+    padding: 6rem 10% 4rem;
+    background-color: var(--bg-color);
+}
+
+.section-title {
+    font-family: "Segoe UI Bold", "Segoe UI", sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #000000;
+}
+
+.services-subtitle {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+    font-weight: 600;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 968px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.hero-section {
+    min-height: 60vh;
+    padding: 2rem 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section {
+    padding: 2rem 10%;
+}
+
+#cursor {
+    font-size: 3.5rem;
+    color: #3B82F6;
+    font-weight: 800;
+    margin-left: 2px;
+    animation: cursorBlink 0.8s step-end infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 100% { visibility: visible; }
+    50% { visibility: hidden; }
+}
+
+/* Título Principal */
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 0.1rem;
+    color: #000000;
+    font-family: 'Segoe UI';
+    line-height: 1;
+}
+
+/* Container do texto animado */
+#changing-text {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #3B82F6;
+    font-family: 'Segoe UI';
+    margin-top: 0;
+    line-height: 1;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.projects-section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    background: #1a1a1a;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-content h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.project-content p {
+    color: #9ca3af;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #3B82F6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #60a5fa;
+}
+
+.read-more i {
+    font-size: 0.9em;
+}
+
+.subtitle {
+    color: #3B82F6;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.contact-section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--bg-color);
+}
+
+.contact-desc {
+    color: var(--text-color);
+    max-width: 600px;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    position: relative;
+}
+
+/* Lado esquerdo - Formulário */
+.contact-form {
+    flex: 0 1 50%;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: none;
+    background: #2d3748;
+    color: white;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Lado direito - Informações de contato */
+.contact-info {
+    flex: 0 1 40%;
+    text-align: right;
+}
+
+.info-item {
+    margin-bottom: 2rem;
+}
+
+.info-item h3 {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.info-item a,
+.info-item p {
+    color: #3B82F6;
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+}
+
+.social-icons img {
+    width: 45px;
+    height: 45px;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.email-link {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+.submit-btn {
+    background: #3B82F6;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-info {
+        text-align: left;
+    }
+    
+    .social-icons {
+        justify-content: flex-start;
+    }
+}
+
+/* Estilo para a nova seção de skills - similar ao tech-grid */
+.skills-section {
+    margin-top: 4rem;
+    padding: 2rem 0;
+}
+
+.skills-title {
+    font-size: 2rem;
+    color: #3B82F6;
+    margin-bottom: 2rem;
+    font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+    font-weight: 600;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.skill-item.animate {
+    animation: techAnimation 1s cubic-bezier(0.43, 0.13, 0.23, 0.96) forwards;
+}
+
+.skill-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.skill-item span {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 400;
+}
+
+/* Usar a mesma animação que já temos para as tecnologias */
+
+.skills-description {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 400;
+}
+
+/* Ajuste na animação para três movimentos */
+.tech-item.animate,
+.skill-item.animate {
+    animation: techAnimation 1s cubic-bezier(0.43, 0.13, 0.23, 0.96) forwards;
+}
+
+@keyframes techAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-20px); /* Primeira subida */
+    }
+    60% {
+        transform: translateY(-10px); /* Descida */
+    }
+    100% {
+        transform: translateY(-15px); /* Subida final */
+    }
+}
+
+/* Ajuste no estilo dos ícones da home */
+.home-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.home-icons img {
+    width: 35px;
+    height: 35px;
+}
+
+.home-icons a:hover img {
+    transform: scale(1.1);
+}
+
+/* Estilos globais de tipografia */
+body {
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Títulos principais */
+h1, .section-title {
+    font-family: "Segoe UI Bold", "Segoe UI", sans-serif;
+    font-weight: 700;
+}
+
+/* Específico para Projects e Contact - garantindo o bold */
+#projects h2,
+#contact h2 {
+    font-family: "Segoe UI Bold", "Segoe UI", sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: #3B82F6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtítulos */
+.section-subtitle {
+    font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem; /* Aumentado proporcionalmente */
+}
+
+/* Textos regulares */
+p, .tech-item span, .skill-item span {
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem; /* Aumentado de 1rem para 1.125rem */
+    line-height: 1.6;
+}
+
+/* Mantendo o estilo do botão */
+.resume-btn {
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 500;
+}
+
+/* Ajuste do tamanho dos textos em todas as seções (exceto home) */
+.about-section p,
+.services-section p,
+.projects-section p,
+.contact-section p,
+.skills-description,
+.tech-item span,
+.skill-item span {
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem; /* Aumentado de 1rem para 1.125rem */
+    line-height: 1.6;
+}
+
+/* Estilo para o botão Show More */
+.show-more-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.show-more-btn a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #3B82F6;
+    color: white;
+    padding: 0.9rem 1.1rem; /* Reduzido o padding */
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem; /* Reduzido o tamanho da fonte */
+    transition: background-color 0.3s ease;
+}
+
+.show-more-btn a:hover {
+    background-color: #2563EB;
+}
+
+.home-section {
+    min-height: 100vh;
+    background-image: url('imagens/background/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+
