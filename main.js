@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         element.parentNode.insertBefore(cursor, element.nextSibling);
         
         // Estilos iniciais
-        element.style.fontSize = '3.5rem';
+        element.style.fontSize = '4rem';
         element.style.color = '#3B82F6';
         element.style.fontWeight = '800';
         element.style.fontFamily = 'Segoe UI';
