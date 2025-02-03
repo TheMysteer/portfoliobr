@@ -128,3 +128,20 @@ document.querySelectorAll('.tech-item').forEach(item => {
 document.querySelectorAll('.skill-item').forEach(item => {
     techObserver.observe(item);
 });
+
+function sendMail() {
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value, 
+        reply_to: document.getElementById('email').value, 
+        message: document.getElementById('message').value,
+    };
+
+    emailjs.send('service_wc39wjq', 'template_bjnp8fo', formData)
+        .then(function () {
+            alert('Mensagem enviada com sucesso!');
+            document.getElementById('contactForm').reset(); // Limpar o formulário
+        }, function (error) {
+            alert('Erro ao enviar a mensagem: ' + error.text);
+        });
+}

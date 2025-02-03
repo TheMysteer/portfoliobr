@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="imagens/icons/Design_sem_nome__8_-removebg-preview.png"sizes="512x512" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+      emailjs.init({
+        publicKey: "35CsQd9DQG_w-HTYs",});
+    })();
+    </script>
 </head>
 <body>
     <header>
@@ -234,7 +243,7 @@
 
                     <div class="form-actions">
                         <a href="mailto:maiconrsilva7y@email.com" class="email-link">Send me email directly</a>
-                        <button type="submit" class="submit-btn">Submit</button>
+                        <button type="submit" onclick="sendMail()" class="submit-btn">Submit</button>
                     </div>
                 </div>
 
