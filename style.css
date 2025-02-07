@@ -257,55 +257,7 @@ nav a.active {
     background-color: #2563EB;
 }
 
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-    padding: 1rem;
-}
 
-.tech-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-    background: var(--bg-color);
-    padding: 1rem;
-    border-radius: 8px;
-}
-
-.tech-item.animate {
-    animation: techAnimation 1s cubic-bezier(0.43, 0.13, 0.23, 0.96) forwards;
-}
-
-.tech-item img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-}
-
-.tech-item span {
-    font-size: 1rem;
-    color: var(--text-color);
-    font-family: "Segoe UI", sans-serif;
-    font-weight: 400;
-}
-
-@keyframes techAnimation {
-    0% {
-        transform: translateY(0);
-    }
-    30% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(-15px);
-    }
-}
 
 .about-section {
     padding: 2rem 10%;
@@ -674,6 +626,56 @@ section {
     }
 }
 
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.tech-item.animate {
+    animation: techAnimation 1s cubic-bezier(0.43, 0.13, 0.23, 0.96) forwards;
+}
+
+.tech-item img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.tech-item span {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 400;
+}
+
+@keyframes techAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
 /* Estilo para a nova seção de skills - similar ao tech-grid */
 .skills-section {
     margin-top: 4rem;
@@ -690,7 +692,7 @@ section {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
     padding: 1rem;
@@ -711,8 +713,8 @@ section {
 }
 
 .skill-item img {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     object-fit: contain;
 }
 
