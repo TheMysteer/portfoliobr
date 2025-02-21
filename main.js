@@ -1,5 +1,5 @@
 // Textos para animação
-const texts = ['Back-end Developer', 'ML Enginner', 'IA Enginner'];
+const texts = ['Praticante de Programação', 'Praticante de ML', 'Praticante de Dados'];
 let index = 0;
 let charIndex = 0;
 let isDeleting = false;
